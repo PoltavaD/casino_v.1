@@ -31,7 +31,7 @@ AppAsset::register($this);
             width: 490px;
             height: 140px;
             left: 705px;
-            top: 416px;
+            top: 400px;
             position: absolute;
             text-align: center;
             padding-top: 15px;
@@ -58,7 +58,7 @@ AppAsset::register($this);
         .summa {
             font-family: 'TrajanPro3', serif;
             color: white;
-            font-size: 120px;
+            font-size: 180px;
             font-weight: bolder;
         }
         .jackpot {

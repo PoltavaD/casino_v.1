@@ -57,9 +57,10 @@ class GamesController extends SecurityController
         } elseif ($jackpot->rate == 1) {
             $jackpot = 500;
         } elseif ($jackpot->rate == 2) {
+            $jackpot = ($jackpot->jackpot != 1000) ? $jackpot->jackpot + 250 : 1000;
 //            $jackpot = $jackpot->jackpot + ($jackpot->jackpot / 2);
-            $jackpot = 500 + ($jackpot->jackpot / 2);
-            $jackpot = round($jackpot, -1);
+//            $jackpot = 500 + ($jackpot->jackpot / 2);
+//            $jackpot = round($jackpot, -1);
         }
         return $jackpot;
     }

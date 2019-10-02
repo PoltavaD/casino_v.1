@@ -34,5 +34,5 @@ use yii\helpers\Html;
 <br>
 <br>
 <div>
-    <a class="btn btn-warning" href="/games/show/" role="button" target="_blank">JackPot</a>
+    <a class="btn btn-warning" href="/games/show/" role="button" target="_blank">ЭКРАН</a>
 </div>
