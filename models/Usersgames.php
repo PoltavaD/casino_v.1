@@ -44,15 +44,27 @@ class Usersgames extends \yii\db\ActiveRecord
      * {@inheritdoc}
      */
 
+//    public function attributeLabels()
+//    {
+//        return [
+//            'id_game' => 'Id Game',
+//            'id_pitBoss' => 'Id Pit Boss',
+//            'id_player' => 'Id Player',
+//            'points' => 'Points',
+//            'summa_zala' => 'Summa Zala',
+//            'date' => 'Date',
+//        ];
+//    }
+
     public function attributeLabels()
     {
         return [
-            'id_game' => 'Id Game',
-            'id_pitBoss' => 'Id Pit Boss',
-            'id_player' => 'Id Player',
-            'points' => 'Points',
-            'summa_zala' => 'Summa Zala',
-            'date' => 'Date',
+            'id_game' => '№ игры',
+            'id_pitBoss' => 'Пользователь',
+            'id_player' => 'ID Игрока',
+            'points' => 'Баллы',
+            'summa_zala' => 'Сумма зала',
+            'date' => 'Дата'
         ];
     }
 
@@ -62,5 +74,6 @@ class Usersgames extends \yii\db\ActiveRecord
     public function getPitBoss()
     {
         return $this->hasOne(PitBosses::className(), ['id' => 'id_pitBoss']);
+//        return $this->hasOne(PitBosses::class, ['id_pitBoss' => 'id']);
     }
 }
