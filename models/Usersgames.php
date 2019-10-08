@@ -64,7 +64,8 @@ class Usersgames extends \yii\db\ActiveRecord
             'id_player' => 'ID Игрока',
             'points' => 'Баллы',
             'summa_zala' => 'Сумма зала',
-            'date' => 'Дата'
+            'date' => 'Дата',
+            'pitBoss.login' => 'Логин',
         ];
     }
 
