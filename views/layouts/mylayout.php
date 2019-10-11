@@ -9,7 +9,7 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-    <meta http-equiv="refresh" content="3">
+<!--    <meta http-equiv="refresh" content="30">-->
     <link href="/css/fonts.css" rel="stylesheet">
 
     <title><?= Html::encode($this->title) ?></title>

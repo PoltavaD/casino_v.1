@@ -18,4 +18,8 @@ $this->title = 'Jack Pot';
         </span>
 </div>
 
+<script>
+    setTimeout(function() { window.location=window.location;},10000);
+</script>
+
 </body>

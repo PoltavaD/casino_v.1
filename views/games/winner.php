@@ -5,6 +5,7 @@ $this->title = 'Winner';
 ?>
 
 <body style="background-image: url('/img/Background2.png')">
+<audio  src="/img/Beijing.ogg" autoplay="autoplay"> </audio>
 <div class="Winner">
         <span class="WP">
             <? echo $Id ?>
@@ -16,5 +17,9 @@ $this->title = 'Winner';
         <? echo $win ?>
     </span>
 </div>
-</body>
 
+<script>
+    setTimeout(function() { window.location=window.location;},60000);
+</script>
+
+</body>
