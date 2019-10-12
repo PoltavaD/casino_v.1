@@ -19,7 +19,7 @@ $this->title = 'Jack Pot';
 </div>
 
 <script>
-    setTimeout(function() { window.location=window.location;},10000);
+    setTimeout(function() { window.location=window.location;},5000);
 </script>
 
 </body>
