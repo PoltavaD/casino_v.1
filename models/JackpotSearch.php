@@ -67,8 +67,6 @@ class JackpotSearch extends Jackpot
             'date' => $this->date,
         ]);
 
-//        $query->andWhere(['like', 'win', $this->jackpot/$this->rate]);
-
         return $dataProvider;
     }
 }

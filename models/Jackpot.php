@@ -40,20 +40,12 @@ class Jackpot extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'id_player' => '№ игры',
+            'id' => 'ID игры',
+            'id_player' => '№ игрока',
             'rate' => 'Rate',
             'jackpot' => 'Jackpot',
             'date' => 'Дата',
             'win' => 'Выигрыш',
         ];
     }
-
-//    public function getWin()
-//    {
-//        $jp = $this->jackpot;
-//        $rate = $this->rate;
-//
-//        return $jp/$rate;
-//    }
 }
