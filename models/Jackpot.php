@@ -29,7 +29,7 @@ class Jackpot extends \yii\db\ActiveRecord
     {
         return [
             [['id_player', 'rate'], 'required'],
-            [['id_player', 'rate'], 'integer'],
+            [['id_player', 'rate', ], 'integer'],
             [['jackpot'], 'number'],
         ];
     }
@@ -41,9 +41,19 @@ class Jackpot extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_player' => 'Id Player',
+            'id_player' => '№ игры',
             'rate' => 'Rate',
             'jackpot' => 'Jackpot',
+            'date' => 'Дата',
+            'win' => 'Выигрыш',
         ];
     }
+
+//    public function getWin()
+//    {
+//        $jp = $this->jackpot;
+//        $rate = $this->rate;
+//
+//        return $jp/$rate;
+//    }
 }
