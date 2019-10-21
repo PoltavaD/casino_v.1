@@ -42,7 +42,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'date',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view}'
+            ],
         ],
     ]); ?>
 
