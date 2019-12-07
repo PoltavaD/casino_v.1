@@ -11,6 +11,20 @@ use app\models\Jackpot;
 
 class GamesController extends SecurityController
 {
+    public function actionSz()
+    {
+        $id = Usersgames::find()->max('id_game');
+        $game = Usersgames::find()->where('id_game=:id_game', [':id_game' => $id])->one();
+        if(!$game) {
+            $summa_zala = 0;
+        } elseif ( $game->summa_zala >= 500 ){
+            $summa_zala = 0;
+        } else {
+            $summa_zala = $game->summa_zala;
+        }
+        return $summa_zala;
+    }
+
     public function summaZala()
     {
         $id = Usersgames::find()->max('id_game');
@@ -98,7 +112,7 @@ class GamesController extends SecurityController
         $id = Usersgames::find()->max('id_game');
         $game = Usersgames::find()->where('id_game=:id_game', [':id_game' => $id])->one();
         if (!$game) {
-            $winner = 00000;
+            $winner = null;
         } else {
             $winner = $game->id_player;
         }
@@ -111,10 +125,10 @@ class GamesController extends SecurityController
         $id = Jackpot::find()->max('id');
         $jackpot = Jackpot::find()->where('id=:id', [':id' => $id])->one();
         if(!$jackpot) {
-            $win = 000;
+            $win = null;
         }
         if ($jackpot->id_player != $this->Winner()) {
-            $win = 000;
+            $win = null;
         }
         elseif ($jackpot->rate == 1){
             $win = $jackpot->jackpot;
@@ -132,8 +146,10 @@ class GamesController extends SecurityController
         $this->layout = 'mylayout';
         $JP = $this->Jackpot();
         $SZ = $this->summaZala();
-        $Id = $this->Winner();
-        $win = $this->Win();
+//        $Id = $this->Winner();
+        $Id = $this->actionWinner();
+//        $win = $this->Win();
+        $win = $this->actionWin();
 
 
         if ($SZ == 0) {
@@ -143,4 +159,37 @@ class GamesController extends SecurityController
         }
     }
 
+    public function actionWinner()
+    {
+        $id = Usersgames::find()->max('id_game');
+        $game = Usersgames::find()->where('id_game=:id_game', [':id_game' => $id])->one();
+        if (!$game) {
+            $winner = null;
+        } else {
+            $winner = $game->id_player;
+        }
+
+        return $winner;
+    }
+
+    public function actionWin()
+    {
+        $id = Jackpot::find()->max('id');
+        $jackpot = Jackpot::find()->where('id=:id', [':id' => $id])->one();
+        if(!$jackpot) {
+            $win = null;
+        }
+        if ($jackpot->id_player != $this->Winner()) {
+            $win = null;
+        }
+        elseif ($jackpot->rate == 1){
+            $win = $jackpot->jackpot;
+        } elseif ($jackpot->rate == 2) {
+            $win = $jackpot->jackpot / 2;
+        }
+
+        if (!empty($win)) {
+            return $win;
+        }
+    }
 }
