@@ -9,6 +9,9 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">
+<!--    <script type="text/javascript" src="/js/jquery.js"></script>-->
+    <script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
 <!--    <meta http-equiv="refresh" content="30">-->
     <link href="/css/fonts.css" rel="stylesheet">
 
@@ -72,6 +75,20 @@ AppAsset::register($this);
             color: white;
             font-size: 120px;
             font-weight: bolder;
+        }
+
+        #JP {
+            width: 570px;
+            height: 185px;
+            left: 678px;
+            top: 807px;
+            position: absolute;
+            text-align: center;
+            padding-top: 20px;
+            font-family: 'Muller Regular', serif;
+            color: #6d4606;
+            font-weight: bolder;
+            font-size: 120px;
         }
 
 

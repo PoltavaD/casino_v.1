@@ -27,6 +27,7 @@ class AppAsset extends AssetBundle
         'img/',
     ];
     public $js = [
+        'js/',
     ];
 
     public $depends = [
